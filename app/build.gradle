@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+android {
+    namespace 'ezbus.mit20550588.conductor'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "ezbus.mit20550588.conductor"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+configurations.implementation {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    implementation 'androidx.room:room-runtime:2.6.1' // Use the latest version
+    annotationProcessor 'androidx.room:room-compiler:2.6.1' // Use the latest version
+
+    // Google maps and places dependencies
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.libraries.places:places:3.3.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    // For custom markers
+    implementation 'com.google.maps.android:android-maps-utils:3.8.0'
+
+    // For the NodeJS dependencies
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    // For hashing passwords
+    implementation 'org.mindrot:jbcrypt:0.4'
+
+    //----------- Android architectural components --------------//
+    def lifecycle_version = "2.6.2"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // Room
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // Stripe Android SDK
+    implementation 'com.stripe:stripe-android:20.36.0'
+
+    implementation 'at.favre.lib:bcrypt:0.7.0'
+
+    implementation 'lk.payhere:androidsdk:3.0.4'
+    implementation 'com.google.code.gson:gson:2.10' // ignore if you have already added
+
+    // QR Code
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+    implementation 'org.json:json:20210307'  // Adjust the version as needed
+}

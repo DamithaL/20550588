@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.Settings.Settings">
+
+
+    <!-- App Bar- Custom -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Back button-->
+        <ImageButton
+            android:id="@+id/BackButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/white"
+            android:padding="14dp"
+            android:src="@drawable/button_back_24"
+            app:iconTint="@color/black" />
+
+        <!--App title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Settings"
+            android:textColor="@color/black"
+            android:textSize="@dimen/app_title_font_size"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--   Ticket card + All the tabs   -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_size_settings"></Space>
+
+            <!--   Ticket card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/rounded_edittext_bg"
+                android:backgroundTint="#B2EBF2"
+                android:elevation="20dp"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <!--  Texts and button of the Ticket card -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Your account has"
+                        android:textSize="16sp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/countOfNewTicketTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="4 Tickets"
+                        android:textSize="16sp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+
+                        android:text="available to redeem"
+                        android:textSize="16sp"></TextView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/MyTicketsButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        android:text="My Tickets"
+                        android:textAllCaps="false"
+                        app:cornerRadius="30dp"
+                        app:rippleColor="@color/quantum_vanillagreen300" />
+
+                </LinearLayout>
+
+                <!-- Bus ticket image  -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bus_tickets_two"></ImageView>
+
+            </LinearLayout>
+
+            <!--   Settings pages buttons         -->
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_size_settings"></Space>
+
+            <!-- First tab - Profile, payment, security settings-->
+
+            <!--Profile settings-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonProfileSettings"
+                style="@style/SettingsPageButtons"
+                android:text="@string/button_settings_1"
+                app:icon="@drawable/sidebar_user_24"/>
+
+            <!--Payment settings-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPaymentSettings"
+                style="@style/SettingsPageButtons"
+                android:text="@string/button_settings_2"
+                app:icon="@drawable/sidebar_payment_24"/>
+
+            <!--Security settings-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSecuritySettings"
+                style="@style/SettingsPageButtons"
+                android:text="@string/button_settings_3"
+                app:icon="@drawable/sidebar_security_24"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_size_settings"/>
+
+            <!-- Second tab - About us, Contact us, Privacy Policy-->
+            <!--About us-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAboutUs"
+                android:text="@string/button_settings_4"
+                style="@style/SettingsPageButtons"
+                app:icon="@drawable/icon_about_us"/>
+            <!--Contact us-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonContactUs"
+                android:text="@string/button_settings_5"
+                style="@style/SettingsPageButtons"
+                app:icon="@drawable/sidebar_contact_24"
+        />
+            <!--Privacy policy-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/privacyPolicyButton"
+                android:text="@string/button_settings_6"
+                style="@style/SettingsPageButtons"
+                app:icon="@drawable/icon_policy_policy"
+            />
+            <!--Terms of service-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/terms_of_service_button"
+                android:text="@string/button_settings_7"
+                style="@style/SettingsPageButtons"
+                app:icon="@drawable/icon_terms"
+       />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_size_settings"/>
+
+            <!-- Third tab - Log out-->
+            <!--Log Out -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#595959"
+                android:padding="20dp"
+                android:paddingStart="20dp"
+                android:text="Log Out"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/round_power_settings_new_24"
+                app:iconPadding="20dp"
+                app:iconSize="@dimen/icon_size_settings"
+                app:rippleColor="@color/quantum_googred">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_size_settings"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
